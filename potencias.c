@@ -1,3 +1,7 @@
+/*
+Retorna todas as potências de m, menores que n.
+Exemplo: n = 1000 e m = 2. Retorno: 1, 2, 4, 8, 16, 32, 64, 128, 256 e 512.
+*/
 
 #include<stdio.h>
 #include<math.h>
