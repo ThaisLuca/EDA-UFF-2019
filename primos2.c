@@ -23,6 +23,7 @@ int main (void){
 			if(primos == n) break;
 		} 
 	}
+	return 0;
 }
 
 int ehPrimo(int numero){
