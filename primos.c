@@ -1,6 +1,6 @@
 /*
 Implemente um programa que receba como parâmetro de entrada n e
-retorne todos os n primeiros números primeos existentes.
+retorne todos os n primeiros números primos existentes.
 */
 
 #include<stdio.h>
