@@ -15,6 +15,10 @@ int main(void) {
 	
 	n = n - 1;
 	numeros = (int*) calloc(n, sizeof(int));
+	if(numeros == NULL){
+		printf("Falha na alocação de memória.\n");
+		exit(1);
+	}
 	for(i = 0; i < n; i++){
 		numeros[i] = i+2;
 	}
@@ -35,6 +39,7 @@ int main(void) {
 			printf("%d\n", numeros[i]);	
 		}
 	}
+	free(numeros);
 	return 0;
 }
 
