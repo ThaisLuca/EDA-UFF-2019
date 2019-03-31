@@ -16,8 +16,13 @@ int main (void){
 
 	i = 0;
 	while(a[i] != '\0'){
-		contadorA[(int) a[i+1]] += 1;
-		contadorB[(int) b[i+1]] += 1;
+		contadorA[(int) a[i]] += 1;
+		printf("%d %d\n", a[i], contadorA[a[i]]);
+		i++;
+	}
+
+	while(b[i] != '\0'){
+		contadorB[(int) a[i]] += 1;
 		i++;
 	}
 
