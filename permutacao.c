@@ -11,8 +11,8 @@ int main (void){
 	contadorA[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
 	contadorB[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-	scanf("%s", &a);
-	scanf("%s", &b);
+	scanf("%s", a);
+	scanf("%s", b);
 
 	i = 0;
 	while(a[i] != '\0'){
