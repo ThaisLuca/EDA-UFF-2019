@@ -7,31 +7,41 @@ Recebe um número a e um b e respode se a é permutação de b.
 
 int main (void){
 	char a[100], b[100];
-	int i, seq = 0, n,
-	contadorA[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
-	contadorB[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+	int i, nA, nB, index,
+	contador[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-	scanf("%s", a);
-	scanf("%s", b);
+	scanf("\n \n%s", a);
+	scanf("\n \n%s", b);
 
-	n = strlen(a);
-	for(i = 0; i < n; i++){
-		contadorA[a[i]] += 1;
-		printf("%s %d\n", a[i], contadorA[a[i]]);
+	nA = strlen(a);
+	nB = strlen(b);
+
+	if(nA != nB){
+		printf("Não é permutação.\n");
+		return 0;
 	}
 
-	n = strlen(b);
-	for(i = 0; i < n; i++){
-		contadorB[b[i]] += 1;
+
+	i = 0;
+	while(a[i] != '\0'){
+		index = (int) a[i] % 9;
+		contador[index] += 1;
+		i++;
 	}
+
+	i = 0;
+	while(b[i] != '\0'){
+		index = (int) b[i] % 9;
+		contador[index] -= 1;
+		i++;
+	}
+
 
 	for(i = 0; i < 10; i++){
-		if((contadorA[i] == 0) && (contadorB[i] == 0)) continue;
-		if(contadorA[i] == contadorB[i]) seq += 1;
+		if(contador[i] != 0) break;
 	}
 
-	printf("%d\n", seq);
-	if(seq == strlen(a)){
+	if(i >= 10){
 		printf("É permutação.\n");
 	} else {
 		printf("Não é permutação.\n");
