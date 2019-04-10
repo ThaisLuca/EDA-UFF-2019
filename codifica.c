@@ -35,6 +35,5 @@ char * codifica(char *str){
 		}
 		i++;
 	}
-	//puts(stringCodificada);
 	return stringCodificada;
 }
