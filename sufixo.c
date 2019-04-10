@@ -9,7 +9,7 @@ Programa que, dada uma cadeia de caracteres e um inteiro n, retira o
 void retira_fim_n(char *str, int n);
 
 int main(void){
-	//char *str;
+	char *str;
 	int n;
 
 	scanf("%d", &n);
