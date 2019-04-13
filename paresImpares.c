@@ -6,7 +6,6 @@ Programa que separa valores inteiros de um vetor em ímpares e pares.
 #include <stdlib.h>
 
 int* transf_i_p(int *vet, int n);
-//void transf_i_p(int* vet, int n);
 void lerVetor(int *vet, int n);
 
 int main (void){
@@ -16,45 +15,52 @@ int main (void){
 	resposta = (int*) malloc(n*sizeof(int));
 	lerVetor(vet, n);
 
-/*	printf("Alterando ver: ");
-	for(i = 0; i < n; i++){
-		printf("%d", vet[i]);
-	}
-	printf("\n");*/
-
 	resposta = transf_i_p(vet, n);
 	printf("Retornando em um vetor de resposta: ");
 	for (i = 0; i < n; ++i){
 		if(resposta[i] != 0) printf("%d ", resposta[i]);
 	}
+	printf("\n");
+
+	free(vet);
+	free(resposta);
 
 	return 0;
 }
 
 
 int* transf_i_p(int *vet, int n){
-	int i, nPares = 0, nImpares = 0;
-	int* pares = (int*) malloc(n*sizeof(int));
-	int* impares = (int*) malloc(n*sizeof(int));
+	int i;
+	int* pares = (int*) calloc(n, sizeof(int));
+	int* impares = (int*) calloc(n, sizeof(int));
+	int* resp = (int *) calloc(n, sizeof(int));
 	for (i = 0; i < n; ++i){
 		if(vet[i] % 2 == 0) {
 			pares[i] = vet[i];
-			nPares++;
 		}
 		if(vet[i] % 2 != 0){
 			impares[i] = vet[i];
-			nImpares++;
 		} 
 	}
-	pares = (int*) realloc(pares, n*2*sizeof(int));
-	
+	int ultima = 0;
 	for(i = 0; i < n; i++){
-		pares[12] = 1990;  
+		if(pares[i] != 0){
+			resp[ultima] = pares[i];
+			ultima++;
+		}
 	}
-	for (i = 0; i < n; ++i){
-		printf("%d ", pares[i]);
+
+	for(i = 0; i < n; i++){
+		if(impares[i] != 0){
+			resp[ultima] = impares[i];
+			ultima++;
+		}
 	}
-	return pares;
+
+	free(pares);
+	free(impares);
+
+	return resp;
 }
 
 void lerVetor(int *vet, int n){
