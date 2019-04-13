@@ -20,7 +20,6 @@ int main (void){
 	if(!str) return 1;
 	gets(str);
 	shift_troca_string(str);
-	printf("Resposta esperada: %s\n", "zLNQ");
 	puts(str);
 
 	return 0;
@@ -28,16 +27,21 @@ int main (void){
 }
 
 void shift_troca_string(char *str){
-	int i = 0, offset;
+	int i = 0;
 	while(str[i] != '\0'){
-		if(A <= str[i] && str[i] <= Z){
-			offset = Z - str[i];
-			if(offset > 25) offset--;
-			str[i] = a + offset;
-		} else if(a < str[i] && str[i] < z){
-			offset = z - str[i];
-			if(offset > 0) offset--;
-			str[i] = A + offset;
+		if(str[i] == A){
+			str[i] = z;
+			continue;
+		}
+		if(str[i] == a){
+			str[i] = Z;
+			continue;
+		}
+
+		if(A+1 >= str[i] && str[i] <= Z){
+			str[i] += 31;
+		} else if(a+1 < str[i] && str[i] < z){
+			str[i] -= 33;
 		} else {
 			str[i] = "!";
 		}
