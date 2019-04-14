@@ -39,6 +39,7 @@ int main (void){
 
 	lerMatriz(m1, n1, mat1, arquivoMatriz1);
 	lerMatriz(m2, n2, mat2, arquivoMatriz2);
+	fclose(arquivoMatriz1); fclose(arquivoMatriz2);
 
 	int **resposta = mult(m1, n1, mat1, m2, n2, mat2);
 	imprimeMatriz(m1, n2, resposta);
