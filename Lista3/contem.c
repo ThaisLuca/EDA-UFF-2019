@@ -18,9 +18,6 @@ int main (void){
 	scanf("%s", str1);
 	scanf("\n \n%s", str2);
 
-	converteString(str1);
-	converteString(str2);
-
 	if(cic(str1, str2)){
 		printf("A string 1 contém a string 2.\n");
 	} else {
@@ -33,6 +30,13 @@ int main (void){
 
 int cic(char *str1, char *str2){
 	int i;
+
+	if(strlen(str2) > strlen(str1)) return 0;
+
+	converteString(str1);
+	converteString(str2);
+
+
 	for(i = 0; i != '\0'; i++){
 
 	}
