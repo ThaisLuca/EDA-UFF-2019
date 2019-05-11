@@ -19,7 +19,7 @@ void insere(TFila *f, int x){
 	TNO *novo = (TNO *) malloc(sizeof(TNO));
 	novo->info = x;
 	novo->prox = NULL;
-	if(vazia(f)){
+	if(filaVazia(f)){
 		f->ini = f->fim = novo;
 	} else {
 		f->fim->prox = novo;
@@ -50,7 +50,7 @@ void liberaFila(TFila *f){
 }
 
 //Imprime a fila
-void ImprimeFila(TFila *f){
+void imprimeFila(TFila *f){
 	while(!filaVazia(f)){
 		printf("%d\n", retira(f));
 	}

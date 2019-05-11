@@ -36,4 +36,7 @@ int pop(TP *p);
 void liberaPilhaVetor(TPV *p);
 void liberaPilha(TP *p);
 
+//Imprime a pilha
+void imprimePilha(TP *p);
+
 #endif

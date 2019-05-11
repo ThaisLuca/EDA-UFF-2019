@@ -78,3 +78,10 @@ void liberaPilha(TP *p){
 	}
 	free(q);
 }
+
+//Funções de impressão
+void imprimePilha(TP *p){
+	while(!pilhaVazia(p)){
+		printf("%d\n", pop(p));
+	}
+}

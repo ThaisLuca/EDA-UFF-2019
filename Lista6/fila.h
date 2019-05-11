@@ -1,10 +1,7 @@
 #ifndef FILA_H
 #define FILA_H
 
-typedef struct no {
-	int info;
-	struct no *prox;
-} TNO;
+#include "pilha.h"
 
 typedef struct fila {
 	TNO *ini, *fim;
@@ -27,6 +24,6 @@ void insere(TFila *f, int x);
 int retira(TFila *f);
 
 //Imprime os elementos da fila
-void ImprimeFila(TFila *f);
+void imprimeFila(TFila *f);
 
 #endif
