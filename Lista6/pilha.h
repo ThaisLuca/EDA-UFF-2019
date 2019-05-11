@@ -2,9 +2,22 @@
 #ifndef PILHA_H
 #define PILHA_H
 
+typedef struct pilhaVetor {
+	int posicaoLivre;
+	int *vet;
+} TPV;
+
+typedef struct no {
+	int info;
+	struct no *prox;
+} TNO;
+
+typedef struct pilhaLista {
+	TNO *prim;
+} TP;
 
 //Cria a pilha
-TP* criaPilhaVetor();
+TPV* criaPilhaVetor();
 TP* criaPilha();
 
 //Verifica se está vazia

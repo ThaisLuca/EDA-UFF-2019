@@ -1,27 +1,13 @@
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "pilha.h"
 
-const int MAX_TAM = 100;
-
-
-typedef struct pilhaVetor {
-	int posicaoLivre;
-	int *vet;
-} TPV;
-
-typedef struct no {
-	int info;
-	struct no *prox;
-} TNO;
-
-typedef struct pilhaLista {
-	TNO *prim;
-} TP;
+int MAX_TAM = 100;
 
 
 // Funções de Criação
-TP* criaPilhaVetor(){
+TPV* criaPilhaVetor(){
 	TPV *p = (TPV*) malloc(sizeof(TPV));
 	p->vet = (int*) malloc(sizeof(int) * MAX_TAM);
 	p->posicaoLivre = 0;
@@ -46,8 +32,7 @@ int pilhaVazia(TP *p){
 
 //Insere um elemento na pilha
 void pushPilhaVetor(TPV *p, int x){
-
-	if(poslivre == MAX_TAM){
+	if(p->posicaoLivre == MAX_TAM){
 		MAX_TAM *= 2;
 		p->vet = (int *) realloc(p->vet, MAX_TAM);
 	}
@@ -86,7 +71,7 @@ void liberaPilhaVetor(TPV *p){
 
 void liberaPilha(TP *p){
 	TNO *q = p->prim, *t;
-	while(!pilhaVazia(q)){
+	while(!pilhaVazia(p)){
 		t = q;
 		q = q->prox;
 		free(t);
