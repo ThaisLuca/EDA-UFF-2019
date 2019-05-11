@@ -9,10 +9,10 @@ typedef struct fila {
 
 
 //Cria uma fila
-TFila* cria(void);
+TFila* criaFila(void);
 
 //Verifica se a fila está vazia
-int vazia(TFila *f);
+int filaVazia(TFila *f);
 
 //Libera a pilha
 void libera(TFila *f);
