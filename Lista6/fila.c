@@ -48,3 +48,10 @@ void liberaFila(TFila *f){
 	}
 	free(f);
 }
+
+//Imprime a fila
+void ImprimeFila(TFila *f){
+	while(!filaVazia(f)){
+		printf("%d\n", retira(f));
+	}
+}

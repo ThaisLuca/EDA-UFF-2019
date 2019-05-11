@@ -26,4 +26,7 @@ void insere(TFila *f, int x);
 //Retira um elemento da fila
 int retira(TFila *f);
 
+//Imprime os elementos da fila
+void ImprimeFila(TFila *f);
+
 #endif
