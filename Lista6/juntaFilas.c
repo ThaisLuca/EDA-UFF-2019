@@ -8,35 +8,28 @@ Programa que junta duas filas e retorna uma fila contendo todos os elementos de 
 #include "fila.h"
 
 TFila* junta_filas(TFila *f1, TFila *f2){
-	TP *p1 = criaPilha();
-	TP *p2 = criaPilha();
-	TP *p1aux = criaPilha();
-	TP *p2aux = criaPilha();
-
-	while(!filaVazia(f1)) push(p1, retira(f1));
-	while(!pilhaVazia(p1)) push(p1aux, pop(p1));
-
-	while(!filaVazia(f2)) push(p2, retira(f2));
-	while(!pilhaVazia(p2)) push(p2aux, pop(p2));
+	TFila *aux1 = criaFila();
+	TFila *aux2 = criaFila();
 
 	TFila *resp = criaFila();
 
-	while(!pilhaVazia(p1aux)){
-		int elemento = pop(p1aux);
+	while(!filaVazia(f1)) insere(aux1, retira(f1));
+	while(!filaVazia(f2)) insere(aux2, retira(f2));
+
+	while(!filaVazia(aux1)){
+		int elemento = retira(aux1);
 		insere(resp, elemento);
 		insere(f1, elemento);
 	}
 
-	while(!pilhaVazia(p2aux)){
-		int elemento = pop(p2aux);
+	while(!filaVazia(aux2)){
+		int elemento = retira(aux2);
 		insere(resp, elemento);
 		insere(f2, elemento);
 	}
 
-	free(p1);
-	free(p1aux);
-	free(p2);
-	free(p2aux);
+	free(aux1);
+	free(aux2);
 
 	return resp;
 }

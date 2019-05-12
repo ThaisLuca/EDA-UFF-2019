@@ -9,20 +9,17 @@ Programa que dada uma fila f, retorna uma nova fila contendo os elementos pares 
 
 TFila* sep_fila(TFila *f){
 	TFila *pares = criaFila();
-	TP *aux = criaPilha();
-	TP *aux2 = criaPilha();
+	TFila *aux = criaFila();
 
 	while(!filaVazia(f)){
 		int elemeto = retira(f);
 		if(elemeto % 2 == 0) insere(pares, elemeto);
-		if(elemeto % 2!= 0) push(aux, elemeto);
+		if(elemeto % 2!= 0) insere(aux, elemeto);
 	}
 
-	while(!pilhaVazia(aux)) push(aux2, pop(aux));
-	while(!pilhaVazia(aux2)) insere(f, pop(aux2));
+	while(!filaVazia(aux)) insere(f, retira(aux));
 
 	free(aux);
-	free(aux2);
 
 	return pares;
 }
