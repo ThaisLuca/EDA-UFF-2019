@@ -4,7 +4,6 @@ Programa que junta duas filas e retorna uma fila contendo todos os elementos de 
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "pilha.h"
 #include "fila.h"
 
 TFila* junta_filas(TFila *f1, TFila *f2){

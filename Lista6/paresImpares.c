@@ -4,7 +4,6 @@ Programa que dada uma fila f, retorna uma nova fila contendo os elementos pares 
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "pilha.h"
 #include "fila.h"
 
 TFila* sep_fila(TFila *f){
